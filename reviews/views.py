@@ -1,6 +1,11 @@
+from datetime import datetime
+
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render,get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from matplotlib.sphinxext.mathmpl import latex_math
+from .forms import ReviewForm
+from django.core.urlresolvers import reverse
 
 from .models import Review,Wine
 # Create your views here.
@@ -17,9 +22,28 @@ def review_detail(request,review_id):
 def wine_list(request):
     wine_list= Wine.objects.order_by('-name')
     context = {'wine_list':wine_list}
-    render(request,'reviews/wine_list.html',context)
+    return render(request,'reviews/wine_list.html',context)
 
 def wine_detail(request,wine_id):
     wine = get_object_or_404(Wine,pk=wine_id)
     return render(request,'reviews/wine_detail.html',{'wine':wine})
+
+def add_review(request, wine_id):
+    wine = get_object_or_404(Wine,pk=wine_id)
+    form = ReviewForm(request.POST)
+    if form.is_valid():
+        rating = form.cleaned_data['rating']
+        comment = form.cleaned_data['comment']
+        user_name = form.cleaned_data['user_name']
+        review = Review()
+        review.wine = wine
+        review.user_name = user_name
+        review.rating = rating
+        review.comment = comment
+        review.pub_date = datetime.datetime.now()
+        review.save()
+        #return HttpResponseRedirect(reverse('reviews:wine_detail',args=(wine.id,)))
+        return HttpResponseRedirect(reverse('reviews:wine_detail', args=(wine.id,)))
+
+    return render(request,'reviews/wine_detail.html',{'wine':wine,'form':form})
 
