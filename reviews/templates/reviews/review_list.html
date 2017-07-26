@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'reviews/base.html' %}
+{% block title %}
 <h2>Latest reviews</h2>
-
+{% endblock %}
+{% block content %}
 {% if latest_review_list %}
     <div>
         {% for review in latest_review_list %}
@@ -21,6 +17,4 @@
 {% else %}
     <p>No reviews are available.</p>
 {% endif %}
-
-</body>
-</html>
+{% endblock %}

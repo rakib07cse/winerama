@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'reviews/base.html' %}
+{% block title %}
 <h3>Wine List</h3>
+{% endblock %}
+
+{% block content %}
 {% if wine_list %}
     <div>
         {% for wine in wine_list %}
@@ -17,5 +15,4 @@
 {% else %}
     <p>No wines are available</p>
 {% endif %}
-</body>
-</html>
+{% endblock %}
