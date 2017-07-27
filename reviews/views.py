@@ -1,5 +1,6 @@
 import datetime
 
+import registration
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render,get_object_or_404
@@ -14,6 +15,7 @@ from .models import Review,Wine
 def review_list(request):
     latest_review_list = Review.objects.order_by('-pub_date')[:9]
     context = {'latest_review_list':latest_review_list}
+    registration
     return render(request,'reviews/review_list.html',context)
 
 def review_detail(request,review_id):
