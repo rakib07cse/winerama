@@ -28,6 +28,7 @@ def wine_list(request):
 def wine_detail(request,wine_id):
     wine = get_object_or_404(Wine,pk=wine_id)
     return render(request,'reviews/wine_detail.html',{'wine':wine})
+
 @login_required
 def add_review(request, wine_id):
     wine = get_object_or_404(Wine,pk=wine_id)
