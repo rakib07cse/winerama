@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
+from ConfigParser import  RawConfigParser
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from distutils.command.config import config
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -77,6 +79,9 @@ WSGI_APPLICATION = 'winerama.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+config = RawConfigParser()
+config.read('dbconfig.ini')
+
 
 DATABASES = {
     'defaults': {
@@ -85,12 +90,11 @@ DATABASES = {
     },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'winerama',
-        'USER': 'root',
-        'PASSWORD': 'redhat',
-        'HOST': 'localhost',
-        'PORT': '',
-
+        'NAME': config.get('database','DATABASE_NAME'),
+        'USER': config.get('database','DATABASE_USER'),
+        'PASSWORD': config.get('database','DATABASE_PASSWORD'),
+        'HOST': config.get('database','DATABASE_HOST'),
+        'PORT': config.get('database','DATABASE_PORT'),
     }
 }
 
