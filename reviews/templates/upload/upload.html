@@ -1,0 +1,23 @@
+{% extends 'reviews/base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content %}
+
+    <form action="{% url 'reviews:image_upload' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+        {#        <p>#}
+        {#            <input id="id_image" type="file" class="" name="image">#}
+        {#        </p>#}
+        {#        <input type="submit" value="Submit"/>#}
+        {% csrf_token %}
+        {% for field in form %}
+            {% bootstrap_field field %}
+        {% endfor %}
+
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">
+                {% bootstrap_icon "star" %} Submit
+            </button>
+        {% endbuttons %}
+    </form>
+{% endblock %}
