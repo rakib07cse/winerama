@@ -16,6 +16,4 @@ urlpatterns =[
     # ex: /review/user - get reviews for the user passed in the url
     url(r'^review/user/$', views.user_review_list, name='user_review_list'),
     url(r'^upload$',views.model_form_image_upload,name='image_upload')
-   
-
 ]

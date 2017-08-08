@@ -1,0 +1,193 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$30000$RF2dyfooE9kd$S7RmqxXyUaIfVZo5kpiEWnUC7gjynKKsKnCgyEFJHbM=",
+        "last_login": "2017-08-07T12:11:22.709Z",
+        "is_superuser": true,
+        "username": "rakib",
+        "first_name": "",
+        "last_name": "",
+        "email": "rakib07cse@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-07-26T06:14:39.632Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$30000$6AJU6rthbaij$4FUr3zy5ivfZSENrX3E5MPTJ/SbpF8ExzaA8oqURaXY=",
+        "last_login": "2017-07-27T11:02:09.886Z",
+        "is_superuser": false,
+        "username": "hue",
+        "first_name": "",
+        "last_name": "",
+        "email": "hue@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-27T11:02:09.730Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$30000$13KbmTV2Ilh6$blyld7VDx+3ICCVW5ezNnYH1UIP4RxhWahyOAuBNGOM=",
+        "last_login": "2017-07-27T11:38:02.629Z",
+        "is_superuser": false,
+        "username": "shourav",
+        "first_name": "",
+        "last_name": "",
+        "email": "ee@n.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-27T11:36:29.280Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$30000$LH8P8C6F5Vdb$i3tkq6s0nycNy+RQD90tPQwXHeS6x3+ihXo6sBPnYoY=",
+        "last_login": "2017-07-27T11:44:39.512Z",
+        "is_superuser": false,
+        "username": "shourav1",
+        "first_name": "",
+        "last_name": "",
+        "email": "a@n.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-07-27T11:44:39.287Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "reviews.wine",
+    "pk": 1,
+    "fields": {
+        "name": "Manzanilla La Gitana"
+    }
+},
+{
+    "model": "reviews.wine",
+    "pk": 2,
+    "fields": {
+        "name": "Pol Roger Rose 1998"
+    }
+},
+{
+    "model": "reviews.wine",
+    "pk": 3,
+    "fields": {
+        "name": "Resseau Chambertin 2001"
+    }
+},
+{
+    "model": "reviews.wine",
+    "pk": 4,
+    "fields": {
+        "name": "Manzanilla La Gitana"
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 1,
+    "fields": {
+        "wine": 1,
+        "pub_date": "2017-07-18T08:45:21Z",
+        "user_name": "alex",
+        "comment": "Never try a SHerry wine before. A bit intense for me, but I thank I could get used to it.",
+        "rating": 3
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 2,
+    "fields": {
+        "wine": 2,
+        "pub_date": "2017-07-03T08:45:41Z",
+        "user_name": "bob",
+        "comment": "Pretty bubbles!",
+        "rating": 3
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 3,
+    "fields": {
+        "wine": 3,
+        "pub_date": "2017-07-26T08:47:35Z",
+        "user_name": "susan",
+        "comment": "A true chambertin as just Resseau can create.Perfection is not easy vintage",
+        "rating": 5
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 4,
+    "fields": {
+        "wine": 4,
+        "pub_date": "2017-07-26T08:49:15Z",
+        "user_name": "brad",
+        "comment": "Fresh and crispy. Pure. A classic Manzanilla. Excellent",
+        "rating": 4
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 5,
+    "fields": {
+        "wine": 2,
+        "pub_date": "2017-07-27T05:32:57.503Z",
+        "user_name": "alex",
+        "comment": "Nice",
+        "rating": 2
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 6,
+    "fields": {
+        "wine": 3,
+        "pub_date": "2017-07-27T09:06:54.871Z",
+        "user_name": "rakib",
+        "comment": "Nice",
+        "rating": 2
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 7,
+    "fields": {
+        "wine": 3,
+        "pub_date": "2017-07-27T09:07:17.710Z",
+        "user_name": "rakib",
+        "comment": "Good",
+        "rating": 4
+    }
+},
+{
+    "model": "reviews.imageupload",
+    "pk": 1,
+    "fields": {
+        "name": "Rakibul Hassan",
+        "designation": "Software Engineer",
+        "image": "images/16650793_882361661905826_1438722912_o.jpg"
+    }
+},
+{
+    "model": "reviews.imageupload",
+    "pk": 2,
+    "fields": {
+        "name": "Rakibul Hassan",
+        "designation": "Software Engineer",
+        "image": "images/16650793_882361661905826_1438722912_o_0LQNTtx.jpg"
+    }
+}
+]
