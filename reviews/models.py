@@ -30,3 +30,8 @@ class Review(models.Model):
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
+
+class ImageUpload(models.Model):
+    name = models.CharField(max_length=64)
+    designation = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images/')
